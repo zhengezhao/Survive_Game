@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Effect.cs">
+    <Files>
+      <File FileName="Assets/Script/GamePlay.cs" Line="56" Column="4" />
+      <File FileName="Assets/Script/SceneManager.cs" Line="30" Column="1" />
+      <File FileName="Assets/Script/ItemManager.cs" Line="39" Column="160" />
+      <File FileName="Assets/Script/Effect.cs" Line="15" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
