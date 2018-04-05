@@ -19,7 +19,7 @@ public class Item : IComparable<Item> {
 	//name of the item
 	public string item_name;
 
-	//use int -1,0,1 to indicate if it is a food,drink or tool : 1: food; 0: drink; -1: tool
+	//use int -1,0,1 to indicate if it is a food,drink or tool . 1: food; 0: drink; -1: tool
 	public int property;
 
 	//constructor
@@ -49,6 +49,7 @@ public class Item : IComparable<Item> {
 		if (isSelected == true && isActive == true && (property == 1 || property == 0)){
 			GameManager.hunger += item_hunger;
 			GameManager.thirst += item_thirst;
+			Diary.use_Item (item_name, property);
 			//Diary.action ("USE", name, property,null);
 			isActive = false;
 			isSelected = false;
@@ -61,6 +62,7 @@ public class Item : IComparable<Item> {
 		if (isSelected == true && isActive == true && property==-1) {
 			GameManager.hunger += item_hunger;
 			GameManager.thirst += item_thirst;
+			Diary.apply_Item (item_name, property, go.name);
 			//Diary.action ("Apply", name, property, go.name);
 			isActive = false;
 			isSelected = false;

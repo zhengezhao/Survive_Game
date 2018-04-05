@@ -9,6 +9,21 @@ public class GameManager : MonoBehaviour {
 	public static List<Item> Inventory = new List<Item>();
 
 
+	// 1:pos 0: neu -1:neg
+	public static int LifeStatus(){
+		if (hunger > 15 && thirst > 15) {
+			return -1;
+		} else if (hunger < 5 && thirst < 5) {
+			return 1;
+		}
+		else{
+			return 0;
+				
+		}
+
+	}
+
+
 	public static void UseItem(string newItem){
 		for (int i = 0; i < Inventory.Count; i++) {
 			if (Inventory [i].item_name == newItem) {
