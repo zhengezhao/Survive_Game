@@ -55,29 +55,6 @@ public class GameManager : MonoBehaviour {
 			new GradientAlphaKey[] { new GradientAlphaKey (1.0f, 0.0f), new GradientAlphaKey (1.0f, 1.0f) });
 	}
 
-
-	// Update is called once per frame
-//	void Update () {	
-//		hungerText.text = "Hunger: " + hunger.ToString ();
-//		thirstText.text = "Thirst: " + thirst.ToString ();
-//
-//		timeBarImage.rectTransform.localScale= new Vector3 (startTime / 10.0f, 1.0f, 1.0f);
-//		timeBarImage.color = timeBarColor.Evaluate (startTime / 1.0f);
-//
-//		if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject () == false) {
-//			if (Input.GetMouseButtonDown (0)) {
-//				RaycastHit hitInfo;
-//				if (Physics.Raycast (Camera.main.ScreenPointToRay (Input.mousePosition), out hitInfo)) {
-//					Debug.Log (hitInfo.transform.gameObject.name);
-//					GameObject.Find ("Label").GetComponent<SpriteRenderer> ().enabled = true;
-//					GameObject.Find ("Label").transform.position = hitInfo.point;
-//
-//					selectedObject = hitInfo.transform.gameObject;
-//				}
-//			}
-//		}
-//	}
-
 	void Update () {    
 		hungerText.text = "Hunger: " + hunger.ToString ();
 		thirstText.text = "Thirst: " + thirst.ToString ();

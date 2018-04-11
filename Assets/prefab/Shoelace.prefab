@@ -134,11 +134,11 @@ MonoBehaviour:
   item_name: Shoelace
   property: -1
   itemImage: {fileID: 21300000, guid: 957e9ebd1d244419f93b00bc394d81ac, type: 3}
-  makeCostHunger: 1
-  makeCostThirst: 1
+  makeCostHunger: 0
+  makeCostThirst: 0
   decomposeCostHunger: 0
   decomposeCostThirst: 0
-  madeTime: 5
+  madeTime: 1
   decomposeTime: 0
   canMake: 0
 --- !u!114 &114371062209758332

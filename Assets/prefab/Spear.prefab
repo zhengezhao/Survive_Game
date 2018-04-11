@@ -210,10 +210,11 @@ MonoBehaviour:
   itemImage: {fileID: 21300000, guid: bdd9f06ff10c5442a85d2a25e2ae9e1e, type: 3}
   makeCostHunger: 3
   makeCostThirst: 3
-  decomposeCostHunger: 0
-  decomposeCostThirst: 0
+  decomposeCostHunger: 2
+  decomposeCostThirst: 2
   madeTime: 3
-  decomposeTime: 0
+  decomposeTime: 2
+  canMake: 0
 --- !u!222 &222131754689614730
 CanvasRenderer:
   m_ObjectHideFlags: 1

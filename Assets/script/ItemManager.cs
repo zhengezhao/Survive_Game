@@ -7,7 +7,7 @@ public class ItemManager : MonoBehaviour {
 	//public static Dictionary<HashSet<string>, HashSet<string>> ItemCombo = 
 	//new Dictionary<HashSet<string>, HashSet<string>>(HashSet<string>.CreateSetComparer());
 	public static Dictionary<string, HashSet<string>> ItemCombo = new Dictionary<string, HashSet<string>>();
-//	public Item apple;
+	public Item Apple;
 	public Item Knife;
 	public Item Stick;
 	public Item Shoe;
@@ -60,22 +60,15 @@ public class ItemManager : MonoBehaviour {
 
 	// Use this for initialization, build the hashmap and item list
 	void Start () {
-//		Itemlist.Add (apple.item_name, apple);
+		Itemlist.Add (Apple.item_name, Apple);
 		Itemlist.Add (Stick.item_name, Stick);
 		Itemlist.Add (Knife.item_name, Knife);
 		Itemlist.Add (Shoe.item_name, Shoe);
 		Itemlist.Add (Shoelace.item_name, Shoelace);
 		Itemlist.Add (Spear.item_name, Spear);
-		//Debug.Log (Itemlist.Count);
-//		Itemlist.Add (spear.item_name,spear);
-		ItemCombo.Add (makeString(new List<string>{Knife.item_name, Stick.item_name}), Set(new List<string>{Spear.item_name}));
+		ItemCombo.Add (makeString(new List<string>{Knife.item_name, Stick.item_name, Shoelace.item_name}), Set(new List<string>{Spear.item_name}));
+		ItemCombo.Add (makeString(new List<string>{Spear.item_name}), Set(new List<string>{Knife.item_name, Stick.item_name, Shoelace.item_name}));
 		ItemCombo.Add (makeString(new List<string>{Shoe.item_name}), Set(new List<string>{Shoelace.item_name}));
-//		ItemCombo.Add (makeString(new List<string>{spear.item_name}), Set(new List<string>{knife.item_name,stick.item_name}));
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 		
 }

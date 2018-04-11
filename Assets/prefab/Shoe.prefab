@@ -171,7 +171,7 @@ MonoBehaviour:
   makeCostThirst: 0
   decomposeCostHunger: 0
   decomposeCostThirst: 0
-  madeTime: 2
+  madeTime: 1
   decomposeTime: 0
   canMake: 1
 --- !u!114 &114621625095837976
