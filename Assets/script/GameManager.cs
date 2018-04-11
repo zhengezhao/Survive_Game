@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 	public static int LifeStatus(){
 		if (hunger > 15 && thirst > 15) {
 			return -1;
-		} else if (hunger < 5 && thirst < 5) {
+		} else if (hunger < 10 && thirst < 10) {
 			return 1;
 		}
 		else{

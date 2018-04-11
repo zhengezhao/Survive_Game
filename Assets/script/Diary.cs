@@ -64,6 +64,34 @@ public class Diary : MonoBehaviour {
 			diary_text += neu_sen_IEumerator.Current;
 		}
 	}
+
+	public static void search(string objectname, string tool, List<contain_Item> items){
+		if (tool == "") {
+			diary_text += "From a " + objectname + ", I found";
+			for (int i = 0; i < items.Count - 1; i++) {
+				if (items [i].item_amount == 1) {
+					diary_text += " a " + items [i].item_name + ",";
+				} else {
+					diary_text += " some " + items [i].item_name + ",";
+				}
+				diary_text += " and " + items [items.Count - 1] + ".";
+			
+			}
+		} else {
+			diary_text += "Thanks to my " + tool + ", luckily I got";
+			for (int i = 0; i < items.Count - 1; i++) {
+				if (items [i].item_amount == 1) {
+					diary_text += " a " + items [i].item_name + ",";
+				} else {
+					diary_text += " some " + items [i].item_name + ",";
+				}
+				diary_text += " and " + items [items.Count - 1] + " from "+objectname;
+
+			}
+		}
+		pos_sen_IEumerator.MoveNext ();
+		diary_text += pos_sen_IEumerator.Current;
+	}
 		
 
 	//use is either food or drink, 1 for food , 0 for drink
@@ -84,18 +112,40 @@ public class Diary : MonoBehaviour {
 
 	}
 
-	public static void apply_Item(string item_name, int item_property,string objectname){
-		if (item_property == -1) {
-			diary_text += (" I handle "+objectname+" with "+item_name+".");
-			addSen ();	
-		}
-	}
+//	public static void apply_Item(string item_name, int item_property,string objectname){
+//		if (item_property == -1) {
+//			diary_text += (" I handle "+objectname+" with "+item_name+".");
+//			addSen ();	
+//		}
+//	}
 
-	public static void make_Item(string item1_name, string item2_name, string madeitem_name){
-		diary_text += "I got "+ madeitem_name +"out of " + item1_name + " and " + item2_name+".";
-		addSen ();	
+	public static void make_Item(HashSet<string> items, HashSet<string> selectedItems){
+		if (items.Count == 1) {
+			diary_text += " Using ";
+		foreach (string item in selectedItems) {
+				diary_text += item+", ";
+		}
+		foreach (string item in items) {
+				diary_text += "I made a " + item +". ";
+			}
+		addSen ();
+		}
+
+		else {
+			diary_text += " I disassembled my ";
+			foreach (string item in items) {
+				diary_text += item+", and I got ";
+			}
+			foreach (string item in selectedItems) {
+				diary_text+=item+",";
+			}
+			diary_text+= "which might be useful.";
+
+		}
 		
 	}
+		
+
 
 	// Use this for initialization
 	void Start () {
