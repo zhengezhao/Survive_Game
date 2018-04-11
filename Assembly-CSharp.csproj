@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{71FE5F95-1CEC-F30B-AB03-893DA9D42A53}</ProjectGuid>
+    <ProjectGuid>{C4F1DC6A-9D76-0BDA-CED6-93F5EEF3058A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -51,17 +51,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\SampleButton.cs" />
-     <Compile Include="Assets\SampleObjPool.cs" />
-     <Compile Include="Assets\script2\Diary.cs" />
-     <Compile Include="Assets\script2\GameManager.cs" />
-     <Compile Include="Assets\script2\Inventory.cs" />
-     <Compile Include="Assets\script2\Item.cs" />
-     <Compile Include="Assets\script2\ItemManager.cs" />
-     <Compile Include="Assets\script2\SceneObject.cs" />
-     <None Include="Assets\script2\negative.txt" />
-     <None Include="Assets\script2\neutral.txt" />
-     <None Include="Assets\script2\positive.txt" />
+     <Compile Include="Assets\script\CameraRotation.cs" />
+     <Compile Include="Assets\script\Diary.cs" />
+     <Compile Include="Assets\script\GameManager.cs" />
+     <Compile Include="Assets\script\Inventory.cs" />
+     <Compile Include="Assets\script\Item.cs" />
+     <Compile Include="Assets\script\ItemManager.cs" />
+     <Compile Include="Assets\script\SampleButton.cs" />
+     <Compile Include="Assets\script\SampleObjPool.cs" />
+     <Compile Include="Assets\script\SceneObject.cs" />
+     <None Include="Assets\script\negative.txt" />
+     <None Include="Assets\script\neutral.txt" />
+     <None Include="Assets\prefab_S\Wood_S\LowPolyPBRShader.shader" />
+     <None Include="Assets\script\positive.txt" />
  <Reference Include="UnityEngine.UIAutomation">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
  </Reference>

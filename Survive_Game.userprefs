@@ -1,14 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/script2/Inventory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/script2/Item.cs">
     <Files>
-      <File FileName="Assets/SampleButton.cs" Line="24" Column="21" />
-      <File FileName="Assets/script2/Inventory.cs" Line="65" Column="47" />
-      <File FileName="Assets/script2/SceneObject.cs" Line="24" Column="21" />
-      <File FileName="Assets/script2/GameManager.cs" Line="34" Column="31" />
-      <File FileName="Assets/script2/ItemManager.cs" Line="18" Column="11" />
-      <File FileName="Assets/script2/Item.cs" Line="27" Column="26" />
-      <File FileName="Assets/SampleObjPool.cs" Line="14" Column="3" />
+      <File FileName="Assets/script2/Inventory.cs" Line="108" Column="67" />
+      <File FileName="Assets/SampleButton.cs" Line="23" Column="32" />
+      <File FileName="Assets/script2/SceneObject.cs" Line="37" Column="39" />
+      <File FileName="Assets/script2/GameManager.cs" Line="45" Column="3" />
+      <File FileName="Assets/script2/ItemManager.cs" Line="62" Column="3" />
+      <File FileName="Assets/script2/Item.cs" Line="25" Column="22" />
+      <File FileName="Assets/SampleObjPool.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
