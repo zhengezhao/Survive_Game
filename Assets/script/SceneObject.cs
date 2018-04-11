@@ -11,7 +11,7 @@ public class contain_Item{
 
 public class SceneObject : MonoBehaviour {
 
-	public string searchTool;
+	public string searchTool="";
 	public List<contain_Item> itemList;
 	public bool isSearched = false;
 	public string objectName;
@@ -21,8 +21,22 @@ public class SceneObject : MonoBehaviour {
 	public float searchTime;
 	//public bool flag = false;
 
+
+	public bool hasSearchTool(){
+		if (searchTool == "") {
+			return true;
+		} else {
+			if (Inventory.inventory.ContainsKey (searchTool) && Inventory.inventory [searchTool] != 0) {
+				return true;
+			} else {
+				return false;
+			}
+			
+		}
+	}
+
 	public void search() {
-		if (!isSearched) {
+		if(!isSearched && hasSearchTool() ) {
 			foreach (contain_Item item in itemList) {
 				Inventory.addItem (item.item_name, item.item_amount);	
 
@@ -33,6 +47,7 @@ public class SceneObject : MonoBehaviour {
 				go.transform.LookAt(Camera.main.transform);
 
 				StartCoroutine (effect (go, item));
+				Diary.search (this.objectName, this.searchTool, this.itemList);
 
 			}
 			isSearched = true;

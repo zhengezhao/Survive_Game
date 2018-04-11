@@ -52,6 +52,7 @@ public class Inventory : MonoBehaviour {
 			GameManager.buttonClicked = !GameManager.buttonClicked;
 		}
 	}
+		
 
 	public static void UseItem(string newItem){
 		if (inventory.ContainsKey (newItem)) {
@@ -61,8 +62,7 @@ public class Inventory : MonoBehaviour {
 				if (curItem.property == 1 || curItem.property == 0) {
 					GameManager.hunger += curItem.item_hunger;
 					GameManager.thirst += curItem.item_thirst;
-
-					// Diary.use_Item (curItem.item_name, curItem.property);
+					//Diary.use_Item (curItem.item_name, curItem.property);
 				} else if (curItem.property == -1) {
 					GameManager.hunger += curItem.item_hunger;
 					GameManager.thirst += curItem.item_thirst;
@@ -100,6 +100,7 @@ public class Inventory : MonoBehaviour {
 		Debug.Log (items);
 		Debug.Log ("size: " + selectedItems.Count);
 		if (items != null) {
+			Diary.make_Item (items, selectedItems);
 			//deleted all the selected items
 			foreach(string item in selectedItems){
 				Debug.Log ("selected item: " + item);
