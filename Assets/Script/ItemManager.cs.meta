@@ -1,11 +1,15 @@
 fileFormatVersion: 2
-guid: f47b18a2fa5aa4d1599ed0295bf3f8c3
-timeCreated: 1522766820
+guid: 48faea3704ce044f29e14e10da6da411
+timeCreated: 1523238535
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - apple: {fileID: 114144657728853898, guid: 3839da63752a14e4ab15c8f1e119586f, type: 2}
+  - knife: {instanceID: 0}
+  - stick: {instanceID: 0}
+  - spear: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

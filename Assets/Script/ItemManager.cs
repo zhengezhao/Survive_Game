@@ -1,76 +1,76 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour {
-	public Effect effectInstance;
+	public static Dictionary<string,Item> Itemlist = new Dictionary<string,Item>();	// name -> item
+	//public static Dictionary<HashSet<string>, HashSet<string>> ItemCombo = 
+	//new Dictionary<HashSet<string>, HashSet<string>>(HashSet<string>.CreateSetComparer());
+	public static Dictionary<string, HashSet<string>> ItemCombo = new Dictionary<string, HashSet<string>>();
+//	public Item apple;
+	public Item Knife;
+	public Item Stick;
+	public Item Shoe;
+	public Item Shoelace;
+	public Item Spear;
 
-	public class Item {
-		public bool isSelected = false;
-		public GameObject go;
-		public string itemName;
-		public Item(string name) {
-			this.go = GameObject.Find (name);
-			this.itemName = name;
+
+	private static HashSet<string> Set(List<string> items) {
+		HashSet<string> res = new HashSet<string> ();
+		for (int i = 0; i < items.Count; i++) {
+			res.Add (items [i]);
 		}
+		return res;
+
 	}
+		
 
-	public static void useItem(List<string> list){
-		int length = list.Count;
-
-		// Use a single item directly or Disassemble a item
-		if (length == 1) {
-			if (list.Contains ("Apple")) {
-				GamePlay.hunger += 5;
-				GamePlay.thirst += 8;
-				GamePlay.iMap ["Apple"].go.transform.GetChild (0).transform.GetComponent<Button> ().interactable = false;
-				GamePlay.iMap ["Apple"].go.transform.GetChild (0).transform.GetComponent<Button> ().transform.GetChild (1).transform.GetComponent<Image> ().enabled = false;
-			}
-
-			else if (list.Contains ("Spear")) {
-				GamePlay.hunger -= 5;
-				GamePlay.thirst -= 8;
-				GamePlay.iMap ["Stick"].go.transform.GetChild (0).transform.GetComponent<Button> ().interactable = true;
-				GamePlay.iMap ["Stick"].go.transform.GetChild (0).transform.GetComponent<Button> ().transform.GetChild (1).transform.GetComponent<Image> ().enabled = true;
-				GamePlay.iMap ["Knife"].go.transform.GetChild (0).transform.GetComponent<Button> ().interactable = true;
-				GamePlay.iMap ["Knife"].go.transform.GetChild (0).transform.GetComponent<Button> ().transform.GetChild (1).transform.GetComponent<Image> ().enabled = true;
-				GamePlay.iMap ["Spear"].go.transform.GetChild (0).transform.GetComponent<Button> ().interactable = false;
-				GamePlay.iMap ["Spear"].go.transform.GetChild (0).transform.GetComponent<Button> ().transform.GetChild (1).transform.GetComponent<Image> ().enabled = false;
-			}
-			  
-			else {
-				GamePlay.hunger -= 5;
-				GamePlay.thirst -= 8;
-			}
+	public static HashSet<string> MakeItem(List<string> items) {
+		string key = makeString (items);
+		if (ItemCombo.ContainsKey(key)){
+			Debug.Log ("Hello");
+			return ItemCombo[key];
 		}
-	
-		// Combine two items
-		else if (length == 2) {
-			if (list.Contains ("Stick") && list.Contains ("Knife")) {
-				GamePlay.hunger -= 5;
-				GamePlay.thirst -= 8;
-
-				GamePlay.iMap ["Spear"].go.transform.GetChild (0).transform.GetComponent<Button> ().interactable = true;
-				GamePlay.iMap ["Spear"].go.transform.GetChild (0).transform.GetComponent<Button> ().transform.GetChild (1).transform.GetComponent<Image> ().enabled = true;
-				GamePlay.combinedItem = "Spear";
-
-				GamePlay.iMap ["Stick"].go.transform.GetChild (0).transform.GetComponent<Button> ().interactable = false;
-				GamePlay.iMap ["Stick"].go.transform.GetChild (0).transform.GetComponent<Button> ().transform.GetChild (1).transform.GetComponent<Image> ().enabled = false;
-				GamePlay.iMap ["Knife"].go.transform.GetChild (0).transform.GetComponent<Button> ().interactable = false;
-				GamePlay.iMap ["Knife"].go.transform.GetChild (0).transform.GetComponent<Button> ().transform.GetChild (1).transform.GetComponent<Image> ().enabled = false;
-			} 
-
-			else {
-				GamePlay.hunger -= 5;
-				GamePlay.thirst -= 8;
-			}	
-		}
-			
-		// Other length
 		else {
-			GamePlay.hunger -= 5;
-			GamePlay.thirst -= 8;
+			return null;
 		}
 	}
+
+	private static string makeString(List<string> list) {
+		list.Sort ();
+		string res = "";
+		foreach (string str in list) {
+			res += str;	
+		}
+		return res;
+	}
+
+	public static Item getItem(string newItem) {
+		if (Itemlist.ContainsKey (newItem)) {
+			return Itemlist [newItem];
+		} else {
+			return null;
+		}
+	}
+
+	// Use this for initialization, build the hashmap and item list
+	void Start () {
+//		Itemlist.Add (apple.item_name, apple);
+		Itemlist.Add (Stick.item_name, Stick);
+		Itemlist.Add (Knife.item_name, Knife);
+		Itemlist.Add (Shoe.item_name, Shoe);
+		Itemlist.Add (Shoelace.item_name, Shoelace);
+		Itemlist.Add (Spear.item_name, Spear);
+		//Debug.Log (Itemlist.Count);
+//		Itemlist.Add (spear.item_name,spear);
+		ItemCombo.Add (makeString(new List<string>{Knife.item_name, Stick.item_name}), Set(new List<string>{Spear.item_name}));
+		ItemCombo.Add (makeString(new List<string>{Shoe.item_name}), Set(new List<string>{Shoelace.item_name}));
+//		ItemCombo.Add (makeString(new List<string>{spear.item_name}), Set(new List<string>{knife.item_name,stick.item_name}));
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+		
 }
